@@ -2,13 +2,13 @@ const inputCity = document.getElementById("city-name-js");
 const getWeather = document.getElementById("get-weather-js");
 const weatherResults = document.querySelector(".weather-results");
 
-async function retrieveWeather() {
+getWeather.addEventListener("click", async () => {
   const query = inputCity.value.trim();
   weatherResults.innerHTML = "";
 
   if (!query) {
     throw new Error("Please enter a city you want to search");
-    
+    return value;
   }
 
   try {
@@ -38,14 +38,4 @@ async function retrieveWeather() {
   }
 
  
-};
-
-
-
-getWeather.addEventListener('click', retrieveWeather);
- 
-inputCity.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
-    retrieveWeather();
-  }
 });
